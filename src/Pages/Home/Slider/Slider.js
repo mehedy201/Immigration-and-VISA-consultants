@@ -16,8 +16,9 @@ const Slider = () => {
                     alt="First slide"
                   />
                   <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h5>Study in</h5>
+                    <h1>Europe</h1>
+                    <h6>Travel & Tourism, Engineering, Business, Health, Science, IT and many more…</h6>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -28,8 +29,9 @@ const Slider = () => {
                   />
 
                   <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5>No IELTS</h5>
+                    <h1>NO INTERVIEW</h1>
+                    <h6>Top Ranked Universities, No Age Limit, Low Living Cost, Work Allowed and many more…</h6>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -40,8 +42,9 @@ const Slider = () => {
                 />
 
                 <Carousel.Caption>
-                  <h3>Third slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h5>Buisness in</h5>
+                    <h1>Europe</h1>
+                    <h6>I will give you Buisness visa you are able to business in Europe</h6>
                 </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
