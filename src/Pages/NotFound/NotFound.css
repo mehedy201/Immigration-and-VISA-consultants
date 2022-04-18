@@ -1,0 +1,5 @@
+.not_found_area{
+    background-image: url(../../images/about.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
