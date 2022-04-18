@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Login.css'
+import SocialLogin from './SocialLogin/SocialLogin';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -29,6 +30,7 @@ const Login = () => {
                   </Form>
                   <p className='pt-3 mb-1'>If don't have account? <span onClick={singUpButton} className="text-primary text-decoration-underline singup_link">Please SingUp</span></p>
                   <p className='pt-0'>If forget Password <span className="text-primary text-decoration-underline singup_link">Reset Password</span></p>
+                  <SocialLogin></SocialLogin>
                 </div>
             </div>
         </>

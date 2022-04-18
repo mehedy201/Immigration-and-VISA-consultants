@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
 import './SingUp.css'
 
 const SingUp = () => {
@@ -37,6 +38,7 @@ const SingUp = () => {
                         <Button className='btn btn-primary d-block mx-auto w-50' type='submit'>Submit</Button>
                   </Form>
                   <p className='pt-3 mb-1'>If you have account? <span onClick={logInButton} className="text-primary text-decoration-underline singup_link">Please log in</span></p>
+                  <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
