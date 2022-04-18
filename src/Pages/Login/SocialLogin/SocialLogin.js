@@ -23,20 +23,22 @@ const SocialLogin = () => {
     if (error || error1) {
         errorElement = <div> <p className='text-danger'>Error: {error?.message} {error1?.message}</p></div>
       }
-      if(user || user1){
+    if(user || user1){
         navigate(from, { replace: true });
       }
-    // Sing In with Facebook
-
-   
-    
-
-
+    // loading 
+    let loadingElement;
+    if(loading || loading1){
+      loadingElement = <div width='20px' class="spinner-grow text-primary" role="status">
+                            <span class="sr-only"></span>
+                      </div>
+    }
 
     return (
         <div className='d-flex justify-content-center align-items-center'>
             <div className='social_icon_div'>
                 {errorElement}
+                {loadingElement}
             <button onClick={() => signInWithGoogle()} className='social_btn d-flex align-items-center'><img className='social_icon' src={googleIcon} alt="" /><p className='m-0'>Google Sing In</p></button>
             <button onClick={() => signInWithGithub()} className='social_btn d-flex align-items-center'><img className='social_icon' src={githubIcon} alt="" /><p className='m-0'>GitHub Sing In</p></button>
             </div>
