@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -13,6 +13,8 @@ const SingUp = () => {
         navigate('/login')
     }
   // Create user using email and password hooks firebase
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [
       createUserWithEmailAndPassword,
       user,
@@ -21,7 +23,17 @@ const SingUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     if(user){
-      navigate('/home')
+      navigate(from, { replace: true });
+    }
+    let errorElement;
+    if(error){
+      errorElement = <p className='text-danger mb-0 mt-2'>{error?.message}</p>
+    }
+    let loadingElement;
+    if(loading){
+      loadingElement = <div width='20px' class="spinner-grow text-primary" role="status">
+                            <span class="sr-only"></span>
+                      </div>
     }
 
     const nameRef = useRef('');
@@ -59,8 +71,10 @@ const SingUp = () => {
                         <Form.Group className="mb-3" controlId="formGroupPassword">
                           <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
                         </Form.Group>
-                        <Button className='btn btn-primary d-block mx-auto w-50' type='submit'>Submit</Button>
+                        <Button className='btn btn-primary d-block mx-auto w-50' type='submit'>Sing Up</Button>
                   </Form>
+                  {errorElement}
+                  {loadingElement}
                   <p className='pt-3 mb-1'>If you have account? <span onClick={logInButton} className="text-primary text-decoration-underline singup_link">Please log in</span></p>
                   <SocialLogin></SocialLogin>
                 </div>

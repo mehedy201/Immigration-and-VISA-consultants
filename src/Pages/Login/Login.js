@@ -26,6 +26,16 @@ const Login = () => {
     if(user){
       navigate(from, { replace: true });
     }
+    let errorElement;
+    if(error){
+      errorElement = <p className='text-danger mb-0 mt-2'>{error?.message}</p>
+    }
+    let loadingElement;
+    if(loading){
+      loadingElement = <div width='20px' class="spinner-grow text-primary" role="status">
+                            <span class="sr-only"></span>
+                      </div>
+    }
 
     const emailRef = useRef('');
     const passwordRef = useRef('')
@@ -56,10 +66,13 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                       <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
                     </Form.Group>
-                    <Button className='btn btn-primary d-block mx-auto w-50' type='submit'>Submit</Button>
+                    <Button className='btn btn-primary d-block mx-auto w-50' type='submit'>Log In</Button>
                   </Form>
+                  {errorElement}
+                  {loadingElement}
                   <p className='pt-3 mb-1'>If don't have account? <span onClick={singUpButton} className="text-primary text-decoration-underline singup_link">Please SingUp</span></p>
                   <p className='pt-0'>If forget Password <span className="text-primary text-decoration-underline singup_link">Reset Password</span></p>
+                  
                   <SocialLogin></SocialLogin>
                 </div>
             </div>
