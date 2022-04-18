@@ -49,7 +49,7 @@ const SingUp = () => {
                 <div className="inside_sing_up">
                     <h2 className='text-center'>Please Register</h2>
                     <p className='text-center'>Please register and join our online family</p>
-                    <Form>
+                    <Form onSubmit={handleSingUpButton}>
                         <Form.Group className="mb-3" controlId="formGroupEmail">
                           <Form.Control ref={nameRef} type="text" placeholder="Enter Your Name" required/>
                         </Form.Group>
@@ -59,7 +59,7 @@ const SingUp = () => {
                         <Form.Group className="mb-3" controlId="formGroupPassword">
                           <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
                         </Form.Group>
-                        <Button onClick={handleSingUpButton} className='btn btn-primary d-block mx-auto w-50' type='submit'>Submit</Button>
+                        <Button className='btn btn-primary d-block mx-auto w-50' type='submit'>Submit</Button>
                   </Form>
                   <p className='pt-3 mb-1'>If you have account? <span onClick={logInButton} className="text-primary text-decoration-underline singup_link">Please log in</span></p>
                   <SocialLogin></SocialLogin>

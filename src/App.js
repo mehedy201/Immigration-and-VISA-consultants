@@ -5,6 +5,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
 import Booking from './Pages/Home/Packages/Booking/Booking';
 import Login from './Pages/Login/Login';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import SingUp from './Pages/Login/SingUp/SingUp';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Sheared/Footer/Footer';
@@ -21,7 +22,7 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/singup' element={<SingUp></SingUp>}></Route>
-        <Route path='/booking' element={<Booking></Booking>}></Route>
+        <Route path='/booking' element={<RequireAuth><Booking></Booking></RequireAuth>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
