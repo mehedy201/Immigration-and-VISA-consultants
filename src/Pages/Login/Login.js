@@ -10,6 +10,11 @@ const Login = () => {
         navigate('/singup')
     }
 
+    const handleLoginButton = event => {
+      event.preventDefault();
+      console.log('clicked')
+    }
+
     return (
         <>
             <div className='login_page'>
@@ -26,7 +31,7 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                       <Form.Control type="password" placeholder="Password" required/>
                     </Form.Group>
-                    <Button className='btn btn-primary d-block mx-auto w-50' type='submit'>Submit</Button>
+                    <Button onClick={handleLoginButton} className='btn btn-primary d-block mx-auto w-50' type='submit'>Submit</Button>
                   </Form>
                   <p className='pt-3 mb-1'>If don't have account? <span onClick={singUpButton} className="text-primary text-decoration-underline singup_link">Please SingUp</span></p>
                   <p className='pt-0'>If forget Password <span className="text-primary text-decoration-underline singup_link">Reset Password</span></p>
