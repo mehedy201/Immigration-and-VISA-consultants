@@ -1,0 +1,9 @@
+.expert_area{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    margin: 2em auto;
+}
+.expert_info .highlight{
+    color: rgb(0, 50, 119);
+}

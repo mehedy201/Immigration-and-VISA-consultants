@@ -1,0 +1,23 @@
+.login_page{
+    background-image: url(../../images/about.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inside_login{
+    width: 50%;
+    border: 1px solid lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5rem auto;
+}
+.singup_link{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px){
+    .inside_login{
+        width: 100%;
+        margin: 1em 0;
+    }
+}

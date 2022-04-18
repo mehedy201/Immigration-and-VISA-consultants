@@ -1,0 +1,37 @@
+.about_page{
+    background-image: url(../../images/about.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.common_title{
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+    color: white;
+}
+.about_me_and_image{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
+    margin: 2em 0;
+}
+.about_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about_img img{
+    width: 50%;
+    height: auto;
+    margin: 2em auto;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px){
+    .common_title{
+        padding: 3rem 0;
+    }
+    .about_me_and_image{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0;
+    }
+}

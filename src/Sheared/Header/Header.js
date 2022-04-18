@@ -2,9 +2,17 @@ import React from "react";
 import "./Header.css";
 import logo from "../../images/logo.png";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
+    const navigate = useNavigate();
+
+    const handleLoginButton = () => {
+        navigate('/login')
+    }
+
+
+
   return (
     <div className="navigation">
       <Navbar collapseOnSelect expand="lg">
@@ -16,7 +24,7 @@ const Header = () => {
               <Nav.Link as={Link} to='/home'>Home</Nav.Link>
               <Nav.Link as={Link} to='/blogs'>Blogs</Nav.Link>
               <Nav.Link as={Link} to='/about'>About Me</Nav.Link>
-              <button className="btn">Log In</button>
+              <button onClick={handleLoginButton} className="login_button">Log In</button>
             </Nav>
           </Navbar.Collapse>
         </Container>

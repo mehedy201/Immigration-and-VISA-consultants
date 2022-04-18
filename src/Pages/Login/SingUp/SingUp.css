@@ -1,0 +1,19 @@
+.sing_up_page{
+    background-image: url(../../../images/about.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.inside_sing_up{
+    width: 50%;
+    border: 1px solid lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5em auto;
+}
+
+@media only screen and (max-width: 768px){
+    .inside_sing_up{
+        width: 100%;
+        margin: 1em 0;
+    }
+}

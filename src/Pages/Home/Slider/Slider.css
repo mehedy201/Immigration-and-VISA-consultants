@@ -1,7 +1,10 @@
+.carousel{
+    z-index: -1;
+}
 .carousel-caption{
     position: absolute;
     right: 15%;
-    top: 30%;
+    top: 35%;
     left: 15%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -11,11 +14,9 @@
 
 
 
-
-
 @media only screen and (max-width: 780px){
     .home_slider img{
         height: 30rem;
-        width: auto;
+        overflow: hidden;
     }
 }

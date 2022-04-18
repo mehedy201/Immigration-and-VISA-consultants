@@ -10,18 +10,38 @@
     height: auto;
     padding: 10px;
 }
+.navigation_ancor .nav-link{
+    padding: 0;
+}
 .navigation_ancor a{
     text-decoration: none;
-    margin: 20px;
+    margin: 0 20px;
     font-size: 20px;
     font-weight: 500;
     color: #ffffff !important;
+}
+.login_button{
+    background: none;
+    color: white;
+    font-weight: 500;
+    width: 100px;
+    padding: 5px 5px;
+    margin: 0;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+}
+.navbar-toggler{
+    border: 1px solid white !important;
 }
 
 
 @media only screen and (max-width: 780px){
     .navigation{
         position: sticky;
-        background-color: darkcyan;
+        background-color: rgb(255, 191, 0) !important;
+    }
+    .navigation img{
+        width: 70px;
+        padding: 0;
     }
 }

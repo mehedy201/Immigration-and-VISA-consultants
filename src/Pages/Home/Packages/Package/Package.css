@@ -1,0 +1,15 @@
+.single_package{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+}
+.single_package .pac{
+    padding: 20px;
+}
+.single_package .pac p{
+    text-align: justify;
+}
+.pakage_button{
+    color: white !important;
+    font-weight: 500 !important;
+    font-size: 15px;
+}

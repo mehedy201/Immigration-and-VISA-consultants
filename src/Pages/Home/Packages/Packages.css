@@ -1,0 +1,20 @@
+.package_title{
+    transform: translateY(-1em)
+}
+.pakage_info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    margin-bottom: 2em;
+}
+
+@media only screen and (max-width: 768px){
+    .package_title{
+        transform: translateY(0px);
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+    .pakage_info{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

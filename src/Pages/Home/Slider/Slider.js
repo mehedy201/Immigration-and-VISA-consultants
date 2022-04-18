@@ -43,7 +43,7 @@ const Slider = () => {
 
                 <Carousel.Caption>
                     <h5>Buisness in</h5>
-                    <h1>Europe</h1>
+                    <h1>United Status</h1>
                     <h6>I will give you Buisness visa you are able to business in Europe</h6>
                 </Carousel.Caption>
                 </Carousel.Item>

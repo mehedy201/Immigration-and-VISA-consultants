@@ -1,0 +1,29 @@
+.content_info{
+    width: 75%;
+    margin: 0 auto;
+    background-color: white;
+    background: white;
+    border-radius: 15px;
+    box-Shadow: 4px 4px 10px rgba(48, 48, 48, 0.427);
+    transform: translateY(-8rem);
+    padding: 0 10px;
+    z-index: 11;
+}
+.content_info .title_color{
+    color:rgb(0, 49, 102)
+}
+.content_info .font_style{
+    font-family: cursive;
+    color:rgb(75, 75, 75);
+    text-align: justify;
+}
+
+
+@media only screen and (max-width: 780px){
+    .content_info{
+        width: 100%;
+        flex-direction: column;
+        transform: translateY(0px);
+        margin: 15px auto;
+    }
+}

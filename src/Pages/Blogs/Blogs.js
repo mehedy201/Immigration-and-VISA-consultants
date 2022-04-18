@@ -3,8 +3,10 @@ import './Blogs.css'
 
 const Blogs = () => {
     return (
-        <div>
-            <h2>This is blog</h2>
+        <div className='blogs_page'>
+            <div className="container">
+                <h1 className='text-center common_title'>Blogs</h1>
+            </div>
         </div>
     );
 };
