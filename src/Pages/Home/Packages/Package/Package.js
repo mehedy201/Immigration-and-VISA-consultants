@@ -4,7 +4,6 @@ import './Package.css'
 
 const Package = ({pakage}) => {
     const {name, img, price, des} = pakage;
-    console.log(img)
 
     const navigate = useNavigate();
     const pakageButton = (name) => {

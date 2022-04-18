@@ -20,16 +20,20 @@ const SingUp = () => {
       error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    if(user){
+      navigate('/home')
+    }
+
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
-    const handleSingUpButton = event => {
+    const handleSingUpButton =async event => {
         event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
         
         console.log(name, email, password)
     }
