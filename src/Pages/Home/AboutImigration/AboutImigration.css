@@ -9,6 +9,11 @@
     padding: 0 10px;
     z-index: 11;
 }
+.content_info img{
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 5px;
+}
 .content_info .title_color{
     color:rgb(0, 49, 102)
 }
