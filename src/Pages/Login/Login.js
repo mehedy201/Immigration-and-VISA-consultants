@@ -9,12 +9,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-  
+  // Use Navigate
   const navigate = useNavigate()
   const singUpButton = () => {
     navigate('/singup')
   }
-
+  // Use Location
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
     // Login hooks
@@ -24,9 +24,9 @@ const Login = () => {
       loading,
       error,
     ] = useSignInWithEmailAndPassword(auth);
-
-    const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(auth);
-
+    // Reset Password
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+    // User , Error and loading condition
     if(user){
       navigate(from, { replace: true });
     }
@@ -41,10 +41,9 @@ const Login = () => {
                       </div>
     }
 
+    // Get input field value
     const emailRef = useRef('');
     const passwordRef = useRef('')
-
-    
 
     const handleLoginButton = event => {
       event.preventDefault();
@@ -54,11 +53,15 @@ const Login = () => {
     }
     const resetPassword = async () =>{
       const email1 = emailRef.current.value;
-      await sendPasswordResetEmail(email1)
-      toast('send email')
+      if(email1){
+        await sendPasswordResetEmail(email1)
+        toast('send email')
+      }
+      else{
+        toast('Please Type Email')
+      }
+      
     }
-    
-
     return (
         <>
             <div className='login_page'>
