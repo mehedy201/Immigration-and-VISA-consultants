@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css'
 import SocialLogin from './SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   
@@ -22,6 +24,8 @@ const Login = () => {
       loading,
       error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, error2] = useSendPasswordResetEmail(auth);
 
     if(user){
       navigate(from, { replace: true });
@@ -48,6 +52,11 @@ const Login = () => {
       const password = passwordRef.current.value
       signInWithEmailAndPassword(email, password)
     }
+    const resetPassword = async () =>{
+      const email1 = emailRef.current.value;
+      await sendPasswordResetEmail(email1)
+      toast('send email')
+    }
     
 
     return (
@@ -71,9 +80,9 @@ const Login = () => {
                   {errorElement}
                   {loadingElement}
                   <p className='pt-3 mb-1'>If don't have account? <span onClick={singUpButton} className="text-primary text-decoration-underline singup_link">Please SingUp</span></p>
-                  <p className='pt-0'>If forget Password <span className="text-primary text-decoration-underline singup_link">Reset Password</span></p>
-                  
+                  <p className='pt-0'>If forget Password <span onClick={resetPassword} className="text-primary text-decoration-underline reset_passsord">Reset Password</span></p>
                   <SocialLogin></SocialLogin>
+                  <ToastContainer />
                 </div>
             </div>
         </>

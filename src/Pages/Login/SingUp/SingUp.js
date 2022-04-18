@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './SingUp.css'
 
 const SingUp = () => {
@@ -20,10 +20,11 @@ const SingUp = () => {
       user,
       loading,
       error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     if(user){
-      navigate(from, { replace: true });
+      console.log('user', user)
     }
     let errorElement;
     if(error){
@@ -46,9 +47,9 @@ const SingUp = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await createUserWithEmailAndPassword(email, password)
-        
-        console.log(name, email, password)
-    }
+        await updateProfile({ displayName: name });
+        navigate(from, { replace: true });
+      }
 
    
 

@@ -1,8 +1,15 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import './Booking.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Booking = () => {
+  const handleBooking =(event) =>{
+    event.preventDefault();
+    toast('Thanks to Booking. Please Back to Home page')
+  }
+
     return (
         <>
         <div className="booking_area">
@@ -29,8 +36,9 @@ const Booking = () => {
                         <Form.Group className="mb-3" controlId="formGroupEmail">
                           <Form.Control type="email" placeholder="Email" required/>
                         </Form.Group>
-                        <Button className='btn btn-primary d-block mx-auto w-50' type='submit'>Procced</Button>
+                        <Button onClick={handleBooking} className='btn btn-primary d-block mx-auto w-50' type='submit'>Procced</Button>
                   </Form>
+                  <ToastContainer></ToastContainer>
                 </div>
             </div>
         </>

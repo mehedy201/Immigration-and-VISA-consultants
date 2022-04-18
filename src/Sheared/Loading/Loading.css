@@ -1,0 +1,7 @@
+.spinner-grow{
+    background-color: transparent;
+    position: absolute;
+    width: 50px;
+    top: 45%;
+    left: 45%;
+}
