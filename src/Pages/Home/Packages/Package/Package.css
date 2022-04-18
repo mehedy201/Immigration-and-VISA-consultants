@@ -2,7 +2,13 @@
     border: 1px solid lightgray;
     border-radius: 10px;
 }
-.single_package .pac{
+
+.single_package .pac img{
+    height: 200px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.single_package .pac .pac_info{
     padding: 20px;
 }
 .single_package .pac p{

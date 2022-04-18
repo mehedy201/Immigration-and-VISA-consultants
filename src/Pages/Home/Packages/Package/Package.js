@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './Package.css'
 
 const Package = ({pakage}) => {
-    const {name, price, des} = pakage;
+    const {name, img, price, des} = pakage;
+    console.log(img)
 
     const navigate = useNavigate();
     const pakageButton = (name) => {
@@ -12,10 +13,13 @@ const Package = ({pakage}) => {
     return (
         <div className='single_package'>
             <div className="pac">
-                <h3>{name}</h3>
-                <p>{des}</p>
-                <h5>Price: ${price}</h5>
-                <button onClick={pakageButton} className='pakage_button btn bg-primary d-block mx-auto'>Booking...</button>
+                <img src={img} alt="" />
+                <div className="pac_info">
+                    <h3>{name}</h3>
+                    <p>{des}</p>
+                    <h5>Price: ${price}</h5>
+                    <button onClick={pakageButton} className='pakage_button btn bg-primary d-block mx-auto'>Booking...</button>
+                </div>
             </div>
         </div>
     );
